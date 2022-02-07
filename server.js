@@ -48,7 +48,6 @@ io.sockets.emit("send matrix", matrix);
 
 
 
-
 function ObjectCreator(matrix) {
     for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
@@ -219,7 +218,8 @@ setInterval(alldatas, 300);
 
 
 
-// -------------------------------------------------------
+
+
 setInterval(gameScripter, 300);
 io.on('connection', function (socket) {
     ObjectCreator(matrix);

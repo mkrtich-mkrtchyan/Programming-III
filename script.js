@@ -156,3 +156,12 @@ function spawnBoom(){
 function changeWeather(){
     socket.emit('chWeather');
 }
+
+
+// }
+// function spawnBoom(){
+//     socket.emit('spawnBoom');
+// }
+// function changeWeather(){
+//     socket.emit('chWeather');
+// }
