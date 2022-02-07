@@ -1,0 +1,228 @@
+<div class = "bodyy">
+  <p>
+    TUMO Centre Gyumri
+    <span>
+     Game of life
+    </span>
+    &mdash; Mkrtich Mkrtchyan&mdash;
+  </p>
+    </div>
+
+    <style>
+      p {
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  display: inline-block;
+  border: 4px double rgba(255, 255, 255, 0.25);
+  border-width: 4px 0;
+  padding: 1.5em 0em;
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  width: 40em;
+  margin: 0 0 0 -20em;
+}
+p span {
+  font: 700 4em/1 "Oswald", sans-serif;
+  letter-spacing: 0;
+  padding: 0.25em 0 0.325em;
+  display: block;
+  margin: 0 auto;
+  text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
+  /* Clip Background Image */
+  background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* Animate Background Image */
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: aitf 80s linear infinite;
+  /* Activate hardware acceleration for smoother animations */
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+}
+
+/* Animate Background Image */
+@-webkit-keyframes aitf {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+
+
+</div>
+
+<style>
+  html {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  .bg {
+    animation: slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+    bottom: 0;
+    left: -50%;
+    opacity: .5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+  }
+
+  .bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+  }
+
+  .bg3 {
+    animation-duration: 5s;
+  }
+
+  .content {
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: .25em;
+    box-shadow: 0 0 .25em rgba(0, 0, 0, .25);
+    box-sizing: border-box;
+    left: 50%;
+    padding: 10vmin;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  h1 {
+    font-family: monospace;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(-25%);
+    }
+
+    100% {
+      transform: translateX(25%);
+    }
+  }
+</style>
+
+
+
+
+
+
+<head>
+  <title>Game Of Life</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="style.css">
+
+  <script src="socket.io/socket.io.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.js"></script>
+
+
+  <style>
+    table {
+      position: relative;
+      bottom: 0;
+      margin: auto;
+      margin-bottom: 3%;
+      background-color: transparent;
+    }
+
+    td {
+      border: 1px solid black;
+      width: 350px;
+      height: 50px;
+      background-color: #050e2d;
+      color: white;
+      padding: 1px;
+      font-size: 30px;
+      font-family: sans-serif;
+
+    }
+
+    .diagram1 {
+      margin-right: 1100px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <table>
+    <tr>
+      <td>Grass</td>
+      <td>GrassEater</td>
+      <td>Predator</td>
+      <td>Coin</td>
+      <td>BankA uto</td>
+
+    </tr>
+    <tr>
+      <td id="grass"></td>
+      <td id="grassEater"></td>
+      <td id="pred"></td>
+      <td id="coin"></td>
+      <td id="bankAuto"></td>
+
+    </tr>
+  </table>
+
+  <div class="diagram1">
+    <canvas id="myChart" width="400" height="400"></canvas>
+
+  </div>
+
+  <div>
+    <div class="container">
+      <a onclick="kill()" class="btn effect01" target="_blank"><span>Kill All</span></a>
+      <a onclick="spawnGr()" class="btn effect01" target="_blank"><span>Sp Grass</span></a>
+      <a onclick="spawnGrEater()" class="btn effect01" target="_blank"><span>Sp GrassEater</span></a>
+      <a onclick="spawnBoom()" class="btn effect01" target="_blank"><span>Sp BankA</span></a>
+      <a onclick="spawnPr()" class="btn effect01" target="_blank"><span>Sp Predator</span></a>
+      <a onclick="killPr()" class="btn effect01" target="_blank"><span>Kill Predators</span></a>
+      <a onclick="changeWeather()" class="btn effect01" target="_blank"><span>Weather</span></a>
+
+
+    </div>
+
+  </div>
+  <div id="wstyle" class="weather">
+    <h3 style="display: inline-block;">Weather: <h3 style="display: inline-block;" id="weather"></h3>
+    </h3>
+  </div>
+  </div>
+</body>
+
+</html>
